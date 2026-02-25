@@ -1,74 +1,122 @@
-# MLflow-Basic-Demo
+# 🍷 MLflow Wine Quality MLOps Project
 
+An end-to-end machine learning experiment tracking project using MLflow.
+This project trains multiple models on the Wine Quality dataset and logs metrics, parameters, and models for comparison and reproducibility.
 
+---
 
-## For Dagshub:
+## 🚀 Project Overview
 
-MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/MLflow-Basic-Demo.mlflow \
-MLFLOW_TRACKING_USERNAME=entbappy \
-MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0 \
-python script.py
+This project demonstrates:
 
+* Training multiple ML models
+* Experiment tracking with MLflow
+* Model performance comparison
+* Model registry usage
+* Reproducible ML pipeline
 
+The goal is to showcase practical MLOps workflow used in real-world machine learning systems.
 
-```bash
+---
 
-export MLFLOW_TRACKING_URI=https://dagshub.com/entbappy/MLflow-Basic-Demo.mlflow
+## 📊 Models Used
 
-export MLFLOW_TRACKING_USERNAME=entbappy 
+* Linear Regression
+* Logistic Regression
+* Support Vector Machine (SVR)
+* Random Forest Regressor
+* Decision Tree Regressor
 
-export MLFLOW_TRACKING_PASSWORD=6824692c47a369aa6f9eac5b10041d5c8edbcef0
+---
 
+## 🗂️ Project Structure
 
 ```
-
-
-# MLflow on AWS
-
-## MLflow on AWS Setup:
-
-1. Login to AWS console.
-2. Create IAM user with AdministratorAccess
-3. Export the credentials in your AWS CLI by running "aws configure"
-4. Create a s3 bucket
-5. Create EC2 machine (Ubuntu) & add Security groups 5000 port
-
-Run the following command on EC2 machine
-```bash
-sudo apt update
-
-sudo apt install python3-pip
-
-sudo apt install pipenv
-
-sudo apt install virtualenv
-
-mkdir mlflow
-
-cd mlflow
-
-pipenv install mlflow
-
-pipenv install awscli
-
-pipenv install boto3
-
-pipenv shell
-
-
-## Then set aws credentials
-aws configure
-
-
-#Finally 
-mlflow server -h 0.0.0.0 --default-artifact-root s3://mlflow-tracking-buc25 --allowed-hosts *
-
-#open Public IPv4 DNS to the port 5000
-
-
-#set uri in your local terminal and in your code 
-export MLFLOW_TRACKING_URI=http://ec2-54-147-36-34.compute-1.amazonaws.com:5000/
+.
+├── main.py
+├── requirements.txt
+├── README.md
+└── mlruns/
 ```
 
+---
 
+## ⚙️ Installation
 
+### 1️⃣ Clone the repository
+
+```bash
+git clone https://github.com/your-username/mlflow-wine-quality-mlops.git
+cd mlflow-wine-quality-mlops
+```
+
+### 2️⃣ Create virtual environment
+
+```bash
+python -m venv venv
+venv\Scripts\activate   # Windows
+```
+
+### 3️⃣ Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## ▶️ Run the Project
+
+```bash
+python main.py
+```
+
+Start MLflow UI:
+
+```bash
+mlflow ui
+```
+
+Open in browser:
+
+```
+http://127.0.0.1:5000
+```
+
+---
+
+## 📈 Metrics Tracked
+
+* RMSE
+* MAE
+* R² Score
+* Accuracy (for Logistic Regression)
+
+---
+
+## 🎯 Key Learning Outcomes
+
+* MLflow experiment tracking
+* Multi-model training pipeline
+* Model versioning
+* Basic MLOps workflow
+
+---
+
+## 🔮 Future Improvements
+
+* Hyperparameter tuning
+* CI/CD integration
+* Docker containerization
+* Cloud deployment
+* Automated model selection
+
+---
+
+## 👨‍💻 Author
+
+Your Name
+
+---
+
+⭐ If you found this helpful, consider giving the repo a star!
